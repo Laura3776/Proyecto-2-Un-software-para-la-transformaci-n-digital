@@ -24,7 +24,7 @@ El diseño es modular y está preparado para futuras ampliaciones como la integr
 
 ## Tecnologías utilizadas
 
-* **Python 3**
+* **Python**
 * **SQLite** para almacenamiento local de datos
 * Conceptos de **Cloud Computing**, **Ciberseguridad**, **Big Data** e **IoT**
 
@@ -83,9 +83,3 @@ Proyecto-2-Un-software-para-la-transformaci-n-digital/
 ## Licencia
 
 Este proyecto se distribuye bajo licencia **MIT**, permitiendo su uso, modificación y redistribución.
-
----
-
-## Estado del proyecto
-
-Proyecto funcional en fase inicial, desarrollado con fines académicos y preparado para evolucionar hacia soluciones más avanzadas de monitorización, análisis de datos y almacenamiento en la nube.

@@ -73,8 +73,8 @@ Proyecto-2-Un-software-para-la-transformaci-n-digital/
 │   ├── data_manager.py
 │   ├── security.py
 │   └── storage.py
+├── README.md
 ├── preguntas.md
-├── requirements.txt
 └── LICENSE
 ```
 

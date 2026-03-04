@@ -1,4 +1,4 @@
-# Respuestas - Proyecto 2 (SmartLog Monitor)
+# Preguntas - Proyecto 2 (SmartLog Monitor)
 
 ## Ciclo de vida del dato (5b)
 

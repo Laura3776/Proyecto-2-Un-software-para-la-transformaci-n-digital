@@ -1,0 +1,609 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentacion Tecnica | SmartLog Monitor</title>
+  <meta name="description" content="Documentacion tecnica y funcional del proyecto SmartLog Monitor.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <p class="kicker">Proyecto 2 · Transformacion Digital</p>
+      <h1>Documentacion de SmartLog Monitor</h1>
+      <p class="lead">Aqui se explica el funcionamiento del programa, su operativa por roles y el cumplimiento de criterios academicos.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#resumen">Empezar lectura</a>
+        <button id="printBtn" class="btn" type="button">Exportar a PDF</button>
+        <a class="btn btn-to-app" href="../index.html">Abrir SmartLog Monitor</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="top-tabs" aria-label="Secciones principales de documentacion">
+    <button class="top-tab active" type="button" data-doc-tab="criterios">Criterios y entrega</button>
+    <button class="top-tab" type="button" data-doc-tab="funcional">Guia funcional del programa</button>
+  </nav>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Indice de contenidos">
+      <h2>Indice</h2>
+      <nav id="docToc"></nav>
+    </aside>
+
+    <main class="content">
+      <section id="resumen" class="card" data-tab-panel="funcional">
+        <h2>Resumen del programa</h2>
+        <div class="notice">
+          <strong>Como abrir el programa:</strong> pulsa <strong>Abrir SmartLog Monitor</strong>. Una vez dentro, selecciona un usuario en el desplegable y haz clic en <strong>Iniciar sesion</strong>.
+        </div>
+        <p><strong>SmartLog Monitor</strong> es una aplicacion web para gestionar incidencias operativas con control por roles: reportante, tecnico, supervisor, auditor y administrador.</p>
+        <p>El sistema concentra apertura, asignacion, seguimiento, cierre, auditoria e informes para evitar trabajo en silos y mejorar tiempos de respuesta.</p>
+        <p>La aplicacion esta orientada a operacion diaria: cada usuario entra con su perfil y ve solo los paneles, filtros y acciones permitidas para su rol. Esto reduce errores de proceso y mejora la trazabilidad.</p>
+        <ul>
+          <li><strong>Problema que resuelve:</strong> incidencias dispersas en chats, correos o hojas sin control unificado.</li>
+          <li><strong>Resultado esperado:</strong> un flujo unico, medible y auditable desde creacion hasta cierre.</li>
+          <li><strong>Entorno objetivo:</strong> equipos IT y OT con necesidad de coordinacion operativa y cumplimiento.</li>
+        </ul>
+        <div class="notice">
+          SmartLog Monitor aplica una gestion por roles con separacion de responsabilidades, trazabilidad completa y control de ciclo de vida del dato.
+        </div>
+        <div class="reading-path">
+          <article class="path-item">
+            <h3>1. Entender el sistema</h3>
+            <p>Lee Arquitectura + Navegacion para ubicarte en la interfaz y su logica.</p>
+          </article>
+          <article class="path-item">
+            <h3>2. Seguir el flujo</h3>
+            <p>Revisa el ciclo de la incidencia de principio a fin, con estados y decisiones.</p>
+          </article>
+          <article class="path-item">
+            <h3>3. Ver responsabilidades</h3>
+            <p>Consulta que puede hacer cada rol y en que pantallas trabaja.</p>
+          </article>
+          <article class="path-item">
+            <h3>4. Revisar criterios</h3>
+            <p>Abre la pestaña de criterios para validar la parte academica del proyecto.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="arquitectura" class="card" data-tab-panel="funcional">
+        <h2>Arquitectura funcional explicada</h2>
+        <ul>
+          <li><strong>Interfaz principal:</strong> paneles por rol y vistas de trabajo (listas, dashboards, logs, informes).</li>
+          <li><strong>Motor de incidencias:</strong> flujo de estados, asignaciones, prioridades y fechas limite.</li>
+          <li><strong>Trazabilidad:</strong> registro de acciones para auditoria y seguimiento.</li>
+          <li><strong>Gobierno:</strong> gestion de usuarios, roles, permisos y parametros de operacion.</li>
+        </ul>
+        <h3>Bloques funcionales del sistema</h3>
+        <ul>
+          <li><strong>Sesion y perfil:</strong> seleccion de usuario, inicio/cierre de sesion, datos personales, contrasena y preferencias de notificacion.</li>
+          <li><strong>Gestion de incidencias:</strong> alta, filtros, detalle, comentarios, adjuntos, historial y cambio de estado.</li>
+          <li><strong>Coordinacion de equipos:</strong> asignacion por supervisor, carga de trabajo, vistas de equipo y kanban.</li>
+          <li><strong>Control y auditoria:</strong> log de acciones, trazabilidad por usuario/rol, exportaciones y reportes.</li>
+          <li><strong>Administracion:</strong> usuarios, roles/permisos, areas, tipos, parametros de SLA y reglas de transicion.</li>
+        </ul>
+      </section>
+
+      <section id="vista-general" class="card" data-tab-panel="funcional">
+        <h2>Vista general del sistema</h2>
+        <div class="quick-grid">
+          <article class="quick-card">
+            <h3>Operacion diaria</h3>
+            <p>Gestion de incidencias con roles, estados, prioridades y fechas limite.</p>
+          </article>
+          <article class="quick-card">
+            <h3>Control por datos</h3>
+            <p>Dashboards, filtros y KPIs para seguimiento de cumplimiento y carga.</p>
+          </article>
+          <article class="quick-card">
+            <h3>Trazabilidad total</h3>
+            <p>Cada accion queda registrada por usuario, rol, hora y cambio aplicado.</p>
+          </article>
+          <article class="quick-card">
+            <h3>Escalabilidad</h3>
+            <p>Base preparada para evolucion a arquitectura cloud y analitica avanzada.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="mapa" class="card" data-tab-panel="funcional">
+        <h2>Mapa completo de pantallas por rol</h2>
+        <p>El sistema muestra interfaces diferentes segun el rol autenticado. A continuacion se resume el conjunto real de pantallas de cada perfil:</p>
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Rol</th>
+              <th>Pantallas principales</th>
+              <th>Enfoque operativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reportante</td>
+              <td>Mis incidencias, Crear incidencia, Mi perfil, Detalle de incidencia</td>
+              <td>Dar de alta incidencias y validar cierre</td>
+            </tr>
+            <tr>
+              <td>Tecnico</td>
+              <td>Dashboard, Asignadas, Equipo, Kanban, Calendario, Chat, Mi perfil</td>
+              <td>Resolver incidencias asignadas y coordinar ejecucion tecnica</td>
+            </tr>
+            <tr>
+              <td>Supervisor</td>
+              <td>Dashboard, Incidencias, Calendario, Asignacion, Carga equipo, Kanban area, Informes, Chat, Mi perfil</td>
+              <td>Controlar flujo del area y cumplimiento de SLA</td>
+            </tr>
+            <tr>
+              <td>Auditor</td>
+              <td>Panel auditoria, Incidencias, Log global, Informes, Usuarios, Mi perfil</td>
+              <td>Verificar trazabilidad, riesgos y cumplimiento</td>
+            </tr>
+            <tr>
+              <td>Administrador</td>
+              <td>Panel admin, Usuarios, Roles y permisos, Configuracion, Incidencias, Logs sistema, Monitorizacion, Mi perfil</td>
+              <td>Gobernar la plataforma y su configuracion</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="navegacion" class="card" data-tab-panel="funcional">
+        <h2>Navegacion general de la aplicacion</h2>
+        <p>Al entrar en SmartLog Monitor, la cabecera muestra controles globales (notificaciones, seleccion de usuario, login/logout y tema). En la zona izquierda aparece el panel del rol activo y sus vistas disponibles.</p>
+        <ul>
+          <li><strong>Cabecera:</strong> campana de notificaciones, selector de usuario, botones de sesion.</li>
+          <li><strong>Columna de rol:</strong> botones de vistas por perfil (dashboard, lista, chat, informes, etc.).</li>
+          <li><strong>Panel principal:</strong> contenido operativo, tablas, formularios y detalle de incidencia.</li>
+          <li><strong>Resumen lateral:</strong> KPIs de actividad segun rol.</li>
+        </ul>
+        <div class="mini-screen" aria-label="Ejemplo visual simplificado de pantalla SmartLog">
+          <div class="mini-topbar">
+            <strong>SmartLog Monitor</strong>
+            <span>Notificaciones: 3</span>
+            <span>Usuario: sup-clara</span>
+            <span>Rol: Supervisor</span>
+          </div>
+          <div class="mini-body">
+            <aside class="mini-side">
+              <p class="mini-title">Control supervisor</p>
+              <ul>
+                <li>Dashboard</li>
+                <li>Incidencias</li>
+                <li>Asignacion</li>
+                <li>Kanban area</li>
+                <li>Informes</li>
+              </ul>
+            </aside>
+            <section class="mini-main">
+              <p class="mini-title">Lista de incidencias del area</p>
+              <table>
+                <thead><tr><th>ID</th><th>Estado</th><th>Prioridad</th><th>Asignado</th></tr></thead>
+                <tbody>
+                  <tr><td>INC-1001</td><td>Pendiente de asignacion</td><td>Alta</td><td>-</td></tr>
+                  <tr><td>INC-1002</td><td>En analisis</td><td>Normal</td><td>tec-luis</td></tr>
+                  <tr><td>INC-1003</td><td>En progreso</td><td>Critica</td><td>tec-irene</td></tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="flujo" class="card" data-tab-panel="funcional">
+        <h2>Como funciona una incidencia (paso a paso)</h2>
+        <div class="flow-steps">
+          <article class="flow-step">
+            <h3>1. Alta de incidencia</h3>
+            <p>El reportante crea el ticket con area, tipo, descripcion y adjuntos. El sistema valida datos y genera ID, estado inicial y fecha limite.</p>
+          </article>
+          <article class="flow-step">
+            <h3>2. Asignacion</h3>
+            <p>El supervisor asigna tecnico de su area. La incidencia pasa a <code>En analisis</code> y queda evento de trazabilidad.</p>
+          </article>
+          <article class="flow-step">
+            <h3>3. Ejecucion tecnica</h3>
+            <p>El tecnico analiza, avanza estado, anade comentarios/evidencias y solicita datos adicionales si es necesario.</p>
+          </article>
+          <article class="flow-step">
+            <h3>4. Cierre</h3>
+            <p>Tras resolver, el reportante valida y confirma. El cierre final queda registrado con historial completo.</p>
+          </article>
+          <article class="flow-step">
+            <h3>5. Auditoria</h3>
+            <p>Auditoria revisa eventos, detecta anomalias y exporta evidencia para cumplimiento y mejora continua.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="roles" class="card" data-tab-panel="funcional">
+        <h2>Roles del programa y que hace cada uno</h2>
+        <p>El sistema aplica control RBAC: cada rol ve solo lo que le corresponde y solo ejecuta acciones permitidas.</p>
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Rol</th>
+              <th>Visibilidad</th>
+              <th>Responsabilidad principal</th>
+              <th>Acciones clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reportante</td>
+              <td>Solo incidencias propias</td>
+              <td>Crear incidencia y aportar informacion de seguimiento</td>
+              <td>Crear, ver detalle, comentar, adjuntar, confirmar cierre</td>
+            </tr>
+            <tr>
+              <td>Tecnico</td>
+              <td>Su equipo o asignadas</td>
+              <td>Analizar y resolver incidencias tecnicas</td>
+              <td>Cambiar estado, comentar, subir evidencias, pedir reasignacion</td>
+            </tr>
+            <tr>
+              <td>Supervisor</td>
+              <td>Incidencias de su area</td>
+              <td>Control operativo del flujo y cumplimiento SLA</td>
+              <td>Asignar tecnico, cambiar prioridad/categoria, cerrar/reabrir, informes</td>
+            </tr>
+            <tr>
+              <td>Auditor</td>
+              <td>Global lectura</td>
+              <td>Verificar trazabilidad y cumplimiento</td>
+              <td>Consultar incidencias, log global, reportes, exportacion de auditoria</td>
+            </tr>
+            <tr>
+              <td>Administrador</td>
+              <td>Global sistema</td>
+              <td>Gobierno de plataforma y configuracion</td>
+              <td>Gestionar usuarios, roles, permisos, areas, tipos, parametros y logs</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Detalle operativo por rol</h3>
+        <p><strong>Reportante:</strong> crea incidencias, consulta "Mis incidencias", aporta comentarios/adjuntos y confirma cierre cuando la solucion es valida.</p>
+        <p><strong>Tecnico:</strong> trabaja su bandeja de asignadas, avanza estados, pide informacion al reportante y anade evidencias tecnicas del trabajo realizado.</p>
+        <p><strong>Supervisor:</strong> distribuye carga entre tecnicos, prioriza por impacto, controla SLA, puede cerrar/reabrir y supervisa salud operativa del area.</p>
+        <p><strong>Auditor:</strong> no opera incidencias, pero revisa logs globales, usuarios, reportes y exporta evidencia de trazabilidad y cumplimiento.</p>
+        <p><strong>Administrador:</strong> mantiene el sistema: usuarios, politicas, permisos, catalogo de areas/tipos, reglas de prioridad y transiciones.</p>
+      </section>
+
+      <section id="pantallas-rol" class="card" data-tab-panel="funcional">
+        <h2>Pantallas por rol</h2>
+        <p>Para evitar una lectura pesada, este bloque se presenta por secciones desplegables. Abre cada rol para ver sus pantallas, acciones y limites.</p>
+
+        <details class="role-detail" open>
+          <summary>Reportante</summary>
+          <ul>
+            <li><strong>Pantallas:</strong> Crear incidencia, Mis incidencias, Detalle, Mi perfil.</li>
+            <li><strong>Puede hacer:</strong> alta de ticket, filtrar sus incidencias, comentar, adjuntar y confirmar cierre.</li>
+            <li><strong>No puede:</strong> asignar tecnicos ni cambiar prioridad global.</li>
+          </ul>
+        </details>
+
+        <details class="role-detail">
+          <summary>Tecnico</summary>
+          <ul>
+            <li><strong>Pantallas:</strong> Dashboard, Asignadas, Equipo, Kanban, Calendario, Chat, Mi perfil.</li>
+            <li><strong>Puede hacer:</strong> avanzar estados permitidos, anadir evidencias, comentar y solicitar reasignacion.</li>
+            <li><strong>No puede:</strong> modificar permisos ni configuracion administrativa.</li>
+          </ul>
+        </details>
+
+        <details class="role-detail">
+          <summary>Supervisor</summary>
+          <ul>
+            <li><strong>Pantallas:</strong> Dashboard, Incidencias, Asignacion, Carga equipo, Kanban area, Informes, Chat, Calendario.</li>
+            <li><strong>Puede hacer:</strong> asignar tecnicos, priorizar, controlar SLA, cerrar/reabrir y coordinar el area.</li>
+            <li><strong>No puede:</strong> administrar roles globales del sistema.</li>
+          </ul>
+        </details>
+
+        <details class="role-detail">
+          <summary>Auditor</summary>
+          <ul>
+            <li><strong>Pantallas:</strong> Panel auditoria, Incidencias, Log global, Informes, Usuarios, Mi perfil.</li>
+            <li><strong>Puede hacer:</strong> revisar trazabilidad, filtrar eventos, detectar riesgos y exportar evidencias.</li>
+            <li><strong>No puede:</strong> operar incidencias (modo lectura).</li>
+          </ul>
+        </details>
+
+        <details class="role-detail">
+          <summary>Administrador</summary>
+          <ul>
+            <li><strong>Pantallas:</strong> Panel admin, Usuarios, Roles/permisos, Configuracion, Incidencias, Logs, Monitorizacion.</li>
+            <li><strong>Puede hacer:</strong> gobernar usuarios, politicas, catalogos, parametros y reglas del sistema.</li>
+            <li><strong>No debe:</strong> sustituir la operacion diaria de supervisor y tecnico.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="estados" class="card" data-tab-panel="funcional">
+        <h2>Estados del ciclo de incidencia</h2>
+        <p>Los estados no son libres: el sistema valida transiciones permitidas para mantener consistencia del dato.</p>
+        <div class="state-pipeline" aria-label="Flujo visual de estados de incidencia">
+          <span>Pendiente de asignacion</span>
+          <span>En analisis</span>
+          <span>En progreso</span>
+          <span>Pendiente de informacion</span>
+          <span>Resuelta</span>
+          <span>Cerrada / Cerrada por el usuario</span>
+        </div>
+        <ul>
+          <li><code>Pendiente de asignacion</code>: creada pero sin tecnico.</li>
+          <li><code>En analisis</code>: tecnico asignado revisando causa y alcance.</li>
+          <li><code>En progreso</code>: trabajo correctivo en marcha.</li>
+          <li><code>Pendiente de informacion</code>: bloqueada por falta de datos del reportante.</li>
+          <li><code>Resuelta</code>: solucion aplicada, pendiente de cierre final.</li>
+          <li><code>Cerrada</code> o <code>Cerrada por el usuario</code>: finalizada.</li>
+        </ul>
+        <div class="notice">
+          Cada cambio de estado se guarda con quien lo hizo, cuando lo hizo y detalle del cambio, tanto en timeline de incidencia como en log de auditoria.
+        </div>
+      </section>
+
+      <section id="vistas" class="card" data-tab-panel="funcional">
+        <h2>Vistas y herramientas principales</h2>
+        <h3>Tablas y filtros</h3>
+        <ul>
+          <li>Busqueda por ID o texto libre.</li>
+          <li>Filtros por estado, prioridad, tipo, area y fecha.</li>
+          <li>Tablas orientadas a operacion con accion directa por fila.</li>
+        </ul>
+        <h3>Kanban y calendario</h3>
+        <ul>
+          <li>Vista kanban para mover incidencias entre estados validos.</li>
+          <li>Vista calendario para controlar fechas limite y carga temporal.</li>
+        </ul>
+        <h3>Chat interno y avisos</h3>
+        <ul>
+          <li>Canales de coordinacion por equipo tecnico/supervisor.</li>
+          <li>Politica de uso: no compartir datos sensibles en mensajes.</li>
+        </ul>
+        <h3>KPIs y reportes</h3>
+        <ul>
+          <li>Indicadores de abiertas, pendientes, resueltas, vencimientos y cumplimiento de SLA.</li>
+          <li>Dashboards para seguimiento diario y revisiones semanales.</li>
+        </ul>
+      </section>
+
+      <section id="ejemplo" class="card" data-tab-panel="funcional">
+        <h2>Ejemplo completo de caso real</h2>
+        <ol>
+          <li>Reportante abre <code>INC-1009</code> por fallo en red de area OT con prioridad alta.</li>
+          <li>Supervisor del area OT asigna a <code>tec-irene</code> y la incidencia pasa a <code>En analisis</code>.</li>
+          <li>Tecnico diagnostica, cambia a <code>En progreso</code>, anade evidencia y comentario tecnico.</li>
+          <li>Se resuelve, cambia a <code>Resuelta</code> y notifica al reportante.</li>
+          <li>Reportante valida y confirma: estado final <code>Cerrada por el usuario</code>.</li>
+          <li>Auditor verifica que toda la cadena tenga trazabilidad completa (sin huecos).</li>
+        </ol>
+        <div class="notice">
+          Este flujo resume la logica real del programa: cada paso queda registrado por usuario, rol, fecha y accion.
+        </div>
+      </section>
+
+      <section id="preview" class="card" data-tab-panel="funcional">
+        <h2>Vista real embebida del SmartLog Monitor</h2>
+        <p>Debajo tienes una vista en miniatura del programa real para referencia visual rapida dentro de esta documentacion.</p>
+        <iframe class="live-preview" src="../index.html" title="Vista embebida de SmartLog Monitor"></iframe>
+      </section>
+
+      <section id="panel-criterios" class="card is-hidden" data-tab-panel="criterios">
+        <h2>Panel de criterios</h2>
+        <div class="criteria-grid">
+          <a class="criteria-tile" href="#c5b"><strong>5b</strong><span>Ciclo de vida del dato</span><em>10 pt</em></a>
+          <a class="criteria-tile" href="#c5f"><strong>5f</strong><span>Almacenamiento en la nube</span><em>10 pt</em></a>
+          <a class="criteria-tile" href="#c5i"><strong>5i</strong><span>Seguridad y regulacion</span><em>10 pt</em></a>
+          <a class="criteria-tile" href="#c2e"><strong>2e</strong><span>THD en negocio y planta</span><em>10 pt</em></a>
+          <a class="criteria-tile" href="#c2f"><strong>2f</strong><span>Mejoras IT y OT</span><em>10 pt</em></a>
+          <a class="criteria-tile" href="#c2g"><strong>2g</strong><span>Tecnologias habilitadoras</span><em>10 pt</em></a>
+        </div>
+      </section>
+
+      <section id="c5b" class="card criterion is-hidden" data-tab-panel="criterios">
+        <h2>Criterio 5b · Ciclo de vida del dato</h2>
+        <h3>Generacion, procesamiento y eliminacion</h3>
+        <ul>
+          <li><strong>Generacion:</strong> el dato nace cuando se crea una incidencia desde formulario estructurado.</li>
+          <li><strong>Procesamiento:</strong> tecnicos/supervisores modifican estado, prioridad, asignacion y comentarios.</li>
+          <li><strong>Consumo:</strong> dashboards y reportes convierten esos datos en indicadores operativos.</li>
+          <li><strong>Cierre y retencion:</strong> incidencia cerrada con historial disponible para auditoria.</li>
+          <li><strong>Eliminacion:</strong> propuesta de retencion temporal (ej. 24 meses) y borrado o anonimizado.</li>
+        </ul>
+        <h3>Integridad y trazabilidad</h3>
+        <ul>
+          <li>ID unico por incidencia para evitar duplicados.</li>
+          <li>Transiciones de estado validadas para evitar incoherencias.</li>
+          <li>Bitacora append-only: actor, accion, fecha y cambios.</li>
+          <li>Control de acceso por rol para preservar consistencia.</li>
+        </ul>
+        <h3>Controles operativos recomendados</h3>
+        <ul>
+          <li>Validacion obligatoria de campos criticos (area, tipo, descripcion, estado).</li>
+          <li>Sellado temporal UTC en cada evento para consistencia multiusuario.</li>
+          <li>Control de calidad de datos: deteccion de incidencias sin asignacion prolongada y estados huérfanos.</li>
+          <li>Politica de archivo: incidencias cerradas pasan a historico antes de eliminacion o anonimizado.</li>
+        </ul>
+        <div class="evidence-box">
+          <h3>Evidencia en el software</h3>
+          <ul>
+            <li><strong>Pantallas:</strong> Crear incidencia, detalle con historial, log global.</li>
+            <li><strong>Funciones observables:</strong> alta de ticket con estado inicial, cambios de estado validados, registro de timeline por evento.</li>
+            <li><strong>Comprobacion:</strong> cada accion deja rastro con usuario, rol, fecha y detalle.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="c5f" class="card criterion is-hidden" data-tab-panel="criterios">
+        <h2>Criterio 5f · Almacenamiento en la nube</h2>
+        <h3>Propuesta de almacenamiento</h3>
+        <ul>
+          <li>Base de datos relacional gestionada para incidencias, usuarios y reglas.</li>
+          <li>Object storage para adjuntos y evidencias.</li>
+          <li>Backups automaticos + recuperacion puntual (PITR).</li>
+        </ul>
+        <h3>Seguridad y disponibilidad</h3>
+        <ul>
+          <li>TLS en transito y cifrado en reposo.</li>
+          <li>Control IAM por minimo privilegio.</li>
+          <li>Arquitectura multi-zona para alta disponibilidad.</li>
+        </ul>
+        <h3>Opciones evaluadas</h3>
+        <ul>
+          <li>Firestore/Firebase: rapido para MVP, menos control analitico.</li>
+          <li>Supabase: SQL + rapidez de despliegue.</li>
+          <li>AWS/Azure/GCP con Postgres + storage: mejor opcion para produccion.</li>
+        </ul>
+        <h3>Diseño tecnico recomendado en produccion</h3>
+        <ul>
+          <li>Separacion de capas: app, base de datos y almacenamiento de archivos en servicios independientes.</li>
+          <li>Red privada para base de datos y acceso publico solo por API controlada.</li>
+          <li>Versionado de adjuntos para trazabilidad y recuperacion.</li>
+          <li>Monitorizacion de disponibilidad con alertas por latencia, error y saturacion.</li>
+        </ul>
+        <div class="evidence-box">
+          <h3>Evidencia en el software</h3>
+          <ul>
+            <li><strong>Pantallas:</strong> configuracion de parametros, gestion de adjuntos, paneles de control.</li>
+            <li><strong>Funciones observables:</strong> uso de reglas de SLA/fecha limite y gestion estructurada de datos.</li>
+            <li><strong>Comprobacion:</strong> arquitectura preparada para trasladar persistencia local a servicios cloud gestionados.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="c5i" class="card criterion is-hidden" data-tab-panel="criterios">
+        <h2>Criterio 5i · Seguridad y regulacion</h2>
+        <h3>Medidas de seguridad</h3>
+        <ul>
+          <li>RBAC por roles y permisos diferenciados.</li>
+          <li>Sesion con expiracion y controles de autenticacion.</li>
+          <li>Validacion de entradas para reducir riesgos XSS/inyeccion.</li>
+          <li>Registro de eventos de seguridad y auditoria.</li>
+        </ul>
+        <h3>Normativa aplicable (GDPR)</h3>
+        <ul>
+          <li>Minimizacion de datos personales.</li>
+          <li>Transparencia sobre finalidad del tratamiento.</li>
+          <li>Soporte a derechos de acceso, rectificacion y supresion.</li>
+          <li>Politica de retencion y privacidad desde el diseno.</li>
+        </ul>
+        <h3>Riesgos y mitigaciones</h3>
+        <ul>
+          <li><strong>Riesgo:</strong> accesos indebidos por permisos mal asignados. <strong>Mitigacion:</strong> auditoria periodica de roles y principio de minimo privilegio.</li>
+          <li><strong>Riesgo:</strong> fuga de datos en adjuntos. <strong>Mitigacion:</strong> escaneo de archivos, cifrado y control de descarga.</li>
+          <li><strong>Riesgo:</strong> incumplimiento de plazos de respuesta a derechos GDPR. <strong>Mitigacion:</strong> flujo documentado y responsable designado.</li>
+        </ul>
+        <div class="evidence-box">
+          <h3>Evidencia en el software</h3>
+          <ul>
+            <li><strong>Pantallas:</strong> Roles y permisos, perfil de usuario, log de auditoria y logs de sistema.</li>
+            <li><strong>Funciones observables:</strong> control RBAC, trazabilidad de acciones y separacion de funciones por rol.</li>
+            <li><strong>Comprobacion:</strong> un usuario solo puede ejecutar acciones incluidas en su politica.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="c2e" class="card criterion is-hidden" data-tab-panel="criterios">
+        <h2>Criterio 2e · Implicacion de THD en negocio y planta</h2>
+        <ul>
+          <li>Reduce tiempos de respuesta y parada operativa.</li>
+          <li>Mejora la toma de decisiones con KPIs de SLA y backlog.</li>
+          <li>En planta, aporta visibilidad en tiempo real sobre incidencias criticas.</li>
+          <li>Permite priorizar impacto de negocio frente a volumen.</li>
+        </ul>
+        <h3>Impacto esperado en resultados</h3>
+        <ul>
+          <li>Menor tiempo medio de asignacion y menor tiempo medio de resolucion.</li>
+          <li>Reduccion de incidencias fuera de SLA mediante alertas tempranas.</li>
+          <li>Mejor planificacion de turnos tecnicos por visibilidad de carga.</li>
+          <li>Disminucion de paradas no planificadas en entornos de planta.</li>
+        </ul>
+        <div class="evidence-box">
+          <h3>Evidencia en el software</h3>
+          <ul>
+            <li><strong>Pantallas:</strong> dashboards de supervisor/tecnico, carga de equipo, informes.</li>
+            <li><strong>Funciones observables:</strong> priorizacion por criticidad, asignacion de recursos y seguimiento de vencimientos.</li>
+            <li><strong>Comprobacion:</strong> decisiones operativas basadas en KPIs en tiempo real.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="c2f" class="card criterion is-hidden" data-tab-panel="criterios">
+        <h2>Criterio 2f · Mejoras en IT y OT</h2>
+        <ul>
+          <li>Unifica lenguaje, estados y responsabilidades entre equipos IT/OT.</li>
+          <li>Estandariza apertura, asignacion, escalado y cierre.</li>
+          <li>Mejora procesos concretos: seguimiento SLA, coordinacion y auditoria post-incidente.</li>
+        </ul>
+        <h3>Procesos IT/OT mejorados de forma concreta</h3>
+        <ul>
+          <li>Incidencias mixtas (red + PLC/sensores) con responsables trazables por fase.</li>
+          <li>Escalado estructurado entre soporte IT y mantenimiento OT.</li>
+          <li>Reapertura controlada con historial de causa raiz y accion correctiva.</li>
+          <li>Revisiones post-incidente con datos unificados para mejora continua.</li>
+        </ul>
+        <div class="evidence-box">
+          <h3>Evidencia en el software</h3>
+          <ul>
+            <li><strong>Pantallas:</strong> asignacion supervisor, kanban de area, detalle de incidencia, auditoria.</li>
+            <li><strong>Funciones observables:</strong> flujo comun IT/OT con estados, reasignaciones y cierre controlado.</li>
+            <li><strong>Comprobacion:</strong> colaboracion entre roles tecnicos con trazabilidad por etapa.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="c2g" class="card criterion is-hidden" data-tab-panel="criterios">
+        <h2>Criterio 2g · Tecnologias Habilitadoras Digitales</h2>
+        <ul>
+          <li><strong>Cloud:</strong> disponibilidad y escalabilidad.</li>
+          <li><strong>Analitica:</strong> medicion de rendimiento operativo.</li>
+          <li><strong>Automatizacion:</strong> alertas y reglas de prioridad.</li>
+          <li><strong>Integracion API:</strong> conexion con ERP/MES/CMMS.</li>
+          <li><strong>IA (futuro):</strong> clasificacion y asignacion inteligente.</li>
+        </ul>
+        <h3>Aplicacion practica de THD en el proyecto</h3>
+        <ul>
+          <li>Automatizacion de prioridad y fecha limite segun reglas de negocio.</li>
+          <li>Analitica operacional para medir eficiencia por rol y por area.</li>
+          <li>Integracion futura con sistemas industriales para ticketing automatico.</li>
+          <li>Escalabilidad cloud para crecimiento multi-sede sin rediseño funcional.</li>
+        </ul>
+        <div class="evidence-box">
+          <h3>Evidencia en el software</h3>
+          <ul>
+            <li><strong>Pantallas:</strong> dashboard, informes, configuracion de reglas y transiciones.</li>
+            <li><strong>Funciones observables:</strong> automatizacion de flujo, analitica de rendimiento y parametrizacion del sistema.</li>
+            <li><strong>Comprobacion:</strong> THD aplicadas a operacion real y evolucion del producto.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="entrega" class="card is-hidden" data-tab-panel="criterios">
+        <h2>Entrega del proyecto</h2>
+        <p>Esta seccion resume exactamente lo que debe ver el evaluador para validar la entrega sin ambiguedad.</p>
+        <ul>
+          <li>Repositorio publico en GitHub con licencia Open Source.</li>
+          <li><code>README.md</code> con explicacion resumida y pasos de prueba.</li>
+          <li><code>preguntas.md</code> con respuestas contextualizadas a 5b, 5f, 5i, 2e, 2f y 2g.</li>
+        </ul>
+        <h3>Recomendacion de estructura para la entrega final</h3>
+        <ul>
+          <li>Repositorio con ramas limpias y commits descriptivos del desarrollo.</li>
+          <li>README con seccion de objetivo, instalacion, ejecucion y casos de uso.</li>
+          <li>Documento de respuestas alineado con evidencias funcionales del software.</li>
+          <li>Capturas o video corto que muestre flujo real por roles.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>Documentacion funcional y tecnica · SmartLog Monitor</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
